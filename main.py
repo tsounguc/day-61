@@ -29,7 +29,13 @@ def home():
 @app.route("/login", methods=['GET', 'POST'])
 def login():
     form = LoginForm()
-    form.validate_on_submit()
+    if form.validate_on_submit():
+        if form.email.data == "admin@email.com" and form.password.data == "12345678" :
+            print(form.email.data)
+            print(form.password.data)
+            return render_template('success.html')
+        else:
+            return render_template('denied.html')
     return render_template('login.html', form=form)
 
 
