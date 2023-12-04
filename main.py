@@ -1,7 +1,7 @@
 import os
 
 from flask import Flask, render_template
-
+from flask_bootstrap import Bootstrap5
 from login_form import LoginForm
 
 '''
@@ -19,6 +19,8 @@ This will install the packages from requirements.txt for this project.
 
 app = Flask(__name__)
 app.secret_key = os.environ.get("secret_key", "Couldn't find secret_key")
+
+bootstrap = Bootstrap5(app)
 
 
 @app.route("/")
