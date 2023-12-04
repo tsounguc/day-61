@@ -1,8 +1,6 @@
 import os
 
 from flask import Flask, render_template
-from flask_wtf import FlaskForm
-from wtforms import StringField
 
 from login_form import LoginForm
 
